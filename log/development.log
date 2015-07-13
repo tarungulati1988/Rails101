@@ -441,3 +441,100 @@ Processing by MicropostsController#create as HTML
   Rendered microposts/new.html.erb within layouts/application (9.8ms)
 Completed 200 OK in 95ms (Views: 89.6ms | ActiveRecord: 0.2ms)
   [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1[0m
+
+
+Started GET "/microposts" for ::1 at 2015-07-12 22:38:42 -0500
+Processing by MicropostsController#index as HTML
+  [1m[36mMicropost Load (0.6ms)[0m  [1mSELECT "microposts".* FROM "microposts"[0m
+  Rendered microposts/index.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 232ms (Views: 164.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/microposts/new" for ::1 at 2015-07-12 22:38:45 -0500
+Processing by MicropostsController#new as HTML
+  Rendered microposts/_form.html.erb (3.6ms)
+  Rendered microposts/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 124ms (Views: 122.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/microposts" for ::1 at 2015-07-12 22:38:47 -0500
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Q+vAU3+i1fU8Ni6u5fzfnJCzT5jp6u7CSu6L9YwUCAhE6mPpKr48CwqB1tDUMfcUaqlmOpTBGJ1s8ilHKQKLdQ==", "micropost"=>{"content"=>"", "user_id"=>"1"}, "commit"=>"Create Micropost"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered microposts/_form.html.erb (3.1ms)
+  Rendered microposts/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 71ms (Views: 65.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/microposts" for ::1 at 2015-07-12 22:39:16 -0500
+Processing by MicropostsController#index as HTML
+  [1m[35mMicropost Load (0.3ms)[0m  SELECT "microposts".* FROM "microposts"
+  Rendered microposts/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 141ms (Views: 132.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-07-12 22:39:20 -0500
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+NameError (uninitialized constant User::FILL_IN):
+  app/models/user.rb:3:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:7:in `index'
+
+
+  Rendered /Users/tgulati/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_source.erb (12.4ms)
+  Rendered /Users/tgulati/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_trace.html.erb (14.1ms)
+  Rendered /Users/tgulati/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_request_and_response.html.erb (3.5ms)
+  Rendered /Users/tgulati/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/_web_console.html.erb (3.1ms)
+  Rendered /Users/tgulati/.rvm/gems/ruby-2.2.1/gems/web-console-2.0.0.beta3/lib/action_dispatch/templates/rescues/diagnostics.html.erb within rescues/layout (104.8ms)
+
+
+Started GET "/" for ::1 at 2015-07-12 22:40:14 -0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 110ms (Views: 105.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/new" for ::1 at 2015-07-12 22:40:17 -0500
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (4.5ms)
+  Rendered users/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 67ms (Views: 66.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-07-12 22:40:18 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S4H7bDttsvttibSKuOjH4dyoVKfi3Q3i1uJJm9PvuClMgFjWbnFbBVs+TPSJJe9pJrJ9BZ/2+73w/uspdvk7VA==", "user"=>{"name"=>"", "email"=>""}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered users/_form.html.erb (10.5ms)
+  Rendered users/new.html.erb within layouts/application (17.8ms)
+Completed 200 OK in 78ms (Views: 74.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for ::1 at 2015-07-12 22:40:31 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z42TxlyG/PfohaY9UCNkqVAwvI030+9XTFXOi5zKJ+hgjDB8CZoVCd4yXkNh7kwhqiqVL0r4GQhqSWw5OdyklQ==", "user"=>{"name"=>"Ruby Rose", "email"=>"ruby.rose@gmail.com"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Ruby Rose"], ["email", "ruby.rose@gmail.com"], ["created_at", "2015-07-13 03:40:31.253650"], ["updated_at", "2015-07-13 03:40:31.253650"]]
+  [1m[35m (1.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 14ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/users/2" for ::1 at 2015-07-12 22:40:31 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 60ms (Views: 58.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for ::1 at 2015-07-12 22:40:36 -0500
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 156ms (Views: 155.0ms | ActiveRecord: 0.4ms)
